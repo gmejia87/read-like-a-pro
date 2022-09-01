@@ -30,11 +30,14 @@ function generateMarkdown(data) {
   - Questions
   - About /contact me
 
+  ### Installation
+  ${data["install instructions"]}
+
   ### Usage
   ${data.information}
 
-  ### Installation
-  ${data["install instructions"]}
+  ### Contribution Guidelines
+  ${data.contribution}
 
   ### Test
   ${data.test}
@@ -42,10 +45,9 @@ function generateMarkdown(data) {
   ### License
   ${data.license}
 
-  ### Contribution Guidelines
-  ${data.contribution}
-
   ### Questions
+  If you have any question, you can contact me at:
+  ${data.github},
   ${data.about}
 `;
 }
