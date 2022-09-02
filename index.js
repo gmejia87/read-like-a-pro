@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+//packages for this application
 const inquirer = require("inquirer");
 const generateMarkdown = require("./assets/generateMarkdown");
 const fs = require("fs");
 const path = require("path");
 
-// TODO: Create an array of questions for user input
+//array of questions for user input
 const questions = [
   {
     type: "input",
@@ -14,7 +14,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message: "Please provide description.",
+    message: "Please provide a description.",
   },
   {
     type: "input",
@@ -29,7 +29,7 @@ const questions = [
   {
     type: "input",
     name: "contribution",
-    message: "How to contribute guidelines.",
+    message: "Guidelines on how to contribute.",
   },
   {
     type: "input",
@@ -39,7 +39,7 @@ const questions = [
   {
     type: "list",
     name: "license",
-    message: "What kind of license should your project have?",
+    message: "What kind of license does your project have?",
     choices: ["ILP1", "ISC", "MIT", "none"],
   },
   {
@@ -54,17 +54,17 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
+//function to write README file
 fs.writeFile("generateMarkdown", data).then((generateMarkdown, data) => {
   return generateMarkdown(data);
 });
 
-// TODO: Create a function to initialize app
+//function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
     console.log(generateMarkdown(answers));
   });
 }
 
-// Function call to initialize app
+//call to initialize app
 init();
