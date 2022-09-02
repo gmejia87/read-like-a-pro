@@ -1,7 +1,15 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+//license badge at top of readme
+function addLicenseBadge(licenseChoice) {
+  if (licenseChoice === "none") {
+    return "";
+  } else if (licenseChoice === "IPL1") {
+    return "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+  } else if (licenseChoice === "ISC") {
+    return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+  } else if (licenseChoice === "MIT") {
+    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+  }
+}
 
 // TODO: Create a function that returns the license link
 

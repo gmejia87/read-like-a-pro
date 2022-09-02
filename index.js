@@ -40,7 +40,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What kind of license should your project have?",
-    choices: ["license 1", "license 2", "license 3", "none"],
+    choices: ["ILP1", "ISC", "MIT", "none"],
   },
   {
     type: "input",
@@ -55,7 +55,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+fs.writeFile("generateMarkdown", data).then((generateMarkdown, data) => {
+  return generateMarkdown(data);
+});
 
 // TODO: Create a function to initialize app
 function init() {
