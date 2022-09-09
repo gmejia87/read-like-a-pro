@@ -55,9 +55,7 @@ const questions = [
 ];
 
 //function to write README file
-fs.writeFile("generateMarkdown", data).then((generateMarkdown, data) => {
-  return generateMarkdown(data);
-});
+//fs.writeFile("./dist/README.md");
 
 //function to initialize app
 function init() {

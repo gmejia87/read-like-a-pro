@@ -1,3 +1,10 @@
+const fs = require("fs");
+const path = require("path");
+
+// const writeFile = () => {
+//   fs.writeFile("./dist/README.md");
+// };
+
 //license badge at top of readme
 function addLicenseBadge(licenseChoice) {
   if (licenseChoice === "none") {
@@ -51,7 +58,8 @@ function generateMarkdown(data) {
   ${data.test}
 
   ### License
-  ${data.license}
+  ${addLicenseBadge(licenseChoice)}
+  ${renderLicenseLink(license)}
 
   ### Questions
   If you have any question, you can contact me at:
