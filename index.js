@@ -1,6 +1,7 @@
 //packages for this application
 const inquirer = require("inquirer");
 const generateMarkdown = require("./assets/generateMarkdown");
+const { writeFile } = require("./assets/generateMarkdown.js");
 const fs = require("fs");
 const path = require("path");
 
@@ -55,7 +56,7 @@ const questions = [
 ];
 
 //function to write README file
-//fs.writeFile("./dist/README.md");
+fs.writeFile("generateMarkdown.js", answers, err);
 
 //function to initialize app
 function init() {

@@ -1,9 +1,23 @@
 const fs = require("fs");
 const path = require("path");
 
-// const writeFile = () => {
-//   fs.writeFile("./dist/README.md");
-// };
+const writeFile = (fileContent) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile("./dist/README.md", fileContent, (err) => {
+      //if there's an error reject the Promise and send the error to the Promise's `.catch()` method
+      if (err) {
+        reject(err);
+        //return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+        return;
+      }
+
+      //if everythng went well, resolve the Promise and send the successful data to the `.than()` method
+      resolve({
+        message: "File created!",
+      });
+    });
+  });
+};
 
 //license badge at top of readme
 function addLicenseBadge(licenseChoice) {
@@ -18,13 +32,20 @@ function addLicenseBadge(licenseChoice) {
   }
 }
 
-// TODO: Create a function that returns the license link
-
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === "none") {
+    return "";
+  } else if (license === "IPL1") {
+    return "![link](https://opensource.org/licenses/IPL-1.0)";
+  } else if (license === "ISC") {
+    return "![link](https://opensource.org/licenses/ISC)";
+  } else if (license === "MIT") {
+    return "![link](https://opensource.org/licenses/ISC)";
+  }
+}
 
 // TODO: Create a function that returns the license section of README
-
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
@@ -32,6 +53,7 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `
   # ${data.title}
+  ${addLicenseBadge(licenseChoice)}
 
   ## Description
   ${data.description}
@@ -58,7 +80,7 @@ function generateMarkdown(data) {
   ${data.test}
 
   ### License
-  ${addLicenseBadge(licenseChoice)}
+  ${data.license}
   ${renderLicenseLink(license)}
 
   ### Questions
@@ -68,4 +90,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = { writeFile };
