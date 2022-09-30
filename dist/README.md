@@ -1,9 +1,9 @@
 
-  # a
+  # Read Like a Pro
   
 
   ## Description
-  b
+  Easily and quickly generate a professional README.md for each of your projects here. This easy to use app from the command line allows you create a markdown file to add to your projects so you can focus on your projects.
   
   ### Table of contents
   - [Usage](#usage)
@@ -14,20 +14,20 @@
   - [Questions](#questions)
 
   ### Installation
-  s
+  Copy repo code into local machine.
 
   ### Usage
-  d
+  Once on local machine, run repo with node, answer prompt questions to generate markdown README.md
 
   ### Contribution Guidelines
-  e
+  Contact me for details.
 
   ### Test
-  f
+  Run 'npm run test' on terminal.
 
   
 
   ### Questions
   If you have any question, you can contact me at:
-  g,
-  h
+  https://github.com/gmejia87,
+  Email:grmejia@ucdavis.edu
