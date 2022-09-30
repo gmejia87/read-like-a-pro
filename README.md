@@ -27,7 +27,7 @@ Contact me for further instructions.
 
 ### Test
 
-On local machine after code is copied, use 'npm run test' in terminal.
+Run app as intended to view/test funtionality.
 
 ## Screenshots
 
