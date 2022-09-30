@@ -71,7 +71,7 @@ function generateMarkdown(data) {
   ### Questions
   If you have any question, you can contact me at:
   https://github.com/${data.github},
-  Email:${data.about}
+  Email: ${data.about}
 `;
 }
 

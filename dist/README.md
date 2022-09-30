@@ -1,15 +1,15 @@
 
-  # Read Like a Pro
-  
+  # Read like a Pro
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  Easily and quickly generate a professional README.md for each of your projects here. This easy to use app from the command line allows you create a markdown file to add to your projects so you can focus on your projects.
+  Generate professional README.md files for projects easily.
   
   ### Table of contents
   - [Usage](#usage)
   - [Installation](#installation)
   - [Test](#test)
- 
+ - [License](#license)
   - [Contribution Guidelines](#contribution-guidelines)
   - [Questions](#questions)
 
@@ -17,15 +17,16 @@
   Copy repo code into local machine.
 
   ### Usage
-  Once on local machine, run repo with node, answer prompt questions to generate markdown README.md
+  Once installed, run 'node index' in terminal, answer prompt questions to generate markdown file.
 
   ### Contribution Guidelines
   Contact me for details.
 
   ### Test
-  Run 'npm run test' on terminal.
+  Run app as intended to view funtionality.
 
-  
+  ### License
+    This project uses the MIT license.
 
   ### Questions
   If you have any question, you can contact me at:
