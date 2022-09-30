@@ -1,7 +1,6 @@
 //packages for this application
 const inquirer = require("inquirer");
 const generateMarkdown = require("./assets/generateMarkdown");
-const { writeFile } = require("./assets/generateMarkdown.js");
 const fs = require("fs");
 const path = require("path");
 
@@ -41,7 +40,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What kind of license does your project have?",
-    choices: ["ILP1", "ISC", "MIT", "none"],
+    choices: ["IPL1", "ISC", "MIT", "none"],
   },
   {
     type: "input",
@@ -56,12 +55,17 @@ const questions = [
 ];
 
 //function to write README file
-fs.writeFile("generateMarkdown.js", answers, err);
+//fs.writeFile("generateMarkdown.js", answers, err);
 
 //function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    console.log(generateMarkdown(answers));
+    // console.log(generateMarkdown(answers));
+    fs.writeFileSync(
+      path.join(path.resolve(__dirname, "dist"), "README.md"),
+      generateMarkdown(answers),
+      "utf-8"
+    );
   });
 }
 

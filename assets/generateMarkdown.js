@@ -1,24 +1,3 @@
-const fs = require("fs");
-const path = require("path");
-
-const writeFile = (fileContent) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile("./dist/README.md", fileContent, (err) => {
-      //if there's an error reject the Promise and send the error to the Promise's `.catch()` method
-      if (err) {
-        reject(err);
-        //return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-        return;
-      }
-
-      //if everythng went well, resolve the Promise and send the successful data to the `.than()` method
-      resolve({
-        message: "File created!",
-      });
-    });
-  });
-};
-
 //license badge at top of readme
 function addLicenseBadge(licenseChoice) {
   if (licenseChoice === "none") {
@@ -53,7 +32,7 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ${addLicenseBadge(licenseChoice)}
+  ${addLicenseBadge(data.license)}
 
   ## Description
   ${data.description}
@@ -81,7 +60,7 @@ function generateMarkdown(data) {
 
   ### License
   ${data.license}
-  ${renderLicenseLink(license)}
+  ${renderLicenseLink(data.license)}
 
   ### Questions
   If you have any question, you can contact me at:
@@ -90,4 +69,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = { writeFile };
+module.exports = generateMarkdown;
