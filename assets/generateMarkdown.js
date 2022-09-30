@@ -15,18 +15,27 @@ function addLicenseBadge(licenseChoice) {
 function renderLicenseLink(license) {
   if (license === "none") {
     return "";
-  } else if (license === "IPL1") {
-    return "![link](https://opensource.org/licenses/IPL-1.0)";
-  } else if (license === "ISC") {
-    return "![link](https://opensource.org/licenses/ISC)";
-  } else if (license === "MIT") {
-    return "![link](https://opensource.org/licenses/ISC)";
+  } else {
+    return "- [License](#license)";
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(licenseChoice) {
+  if (licenseChoice === "none") {
+    return "";
+  } else if (licenseChoice === "IPL1") {
+    return `### License
+    This project uses the IPL1 license.`;
+  } else if (licenseChoice === "ISC") {
+    return `### License
+    This project uses the ISC license.`;
+  } else if (licenseChoice === "MIT") {
+    return `### License
+    This project uses the MIT license.`;
+  }
+}
 
 //generate markdown for README function
 function generateMarkdown(data) {
@@ -38,13 +47,12 @@ function generateMarkdown(data) {
   ${data.description}
   
   ### Table of contents
-  - Usage
-  - Installation
-  - Test
-  - License
-  - Contribution guidelines
-  - Questions
-  - About /contact me
+  - [Usage](#usage)
+  - [Installation](#installation)
+  - [Test](#test)
+ ${renderLicenseLink(data.license)}
+  - [Contribution Guidelines](#contribution-guidelines)
+  - [Questions](#questions)
 
   ### Installation
   ${data["install instructions"]}
@@ -58,9 +66,7 @@ function generateMarkdown(data) {
   ### Test
   ${data.test}
 
-  ### License
-  ${data.license}
-  ${renderLicenseLink(data.license)}
+  ${renderLicenseSection(data.license)}
 
   ### Questions
   If you have any question, you can contact me at:
