@@ -31,11 +31,11 @@ Run app as intended to view/test funtionality.
 
 ## Screenshots
 
-placeholder
+![2022-09-30 (1)](https://user-images.githubusercontent.com/108241017/193351925-1586c33b-3abd-4d7c-a2c5-d1f9ce591a62.png)
 
 ## Demo video
 
-placeholder
+https://user-images.githubusercontent.com/108241017/193351960-943a6f11-02fa-4e29-96d9-e505bd47b948.mp4
 
 ### Questions
 
